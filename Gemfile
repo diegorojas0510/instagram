@@ -77,6 +77,11 @@ end
 
 # gem slim rails
 gem "slim-rails"
-# gem font awasome
-#
+# gem font-awesome-rails
+gem 'font-awesome-rails'
+
+# gem turbolinks
 gem 'turbolinks', '~> 5.2.0'
+
+#gem devise
+gem 'devise'
