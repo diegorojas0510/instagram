@@ -8,7 +8,9 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require fontawesome/all
+// require fontawesome/all
 //= require_tree .
 
 FontAwesome.config.mutateApproach = 'sync'
+
+

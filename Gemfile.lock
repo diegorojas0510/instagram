@@ -274,6 +274,7 @@ DEPENDENCIES
   redis (~> 4.0)
   rubocop
   selenium-webdriver
+  slim
   slim-rails
   sprockets-rails
   sqlite3 (~> 1.4)

@@ -77,6 +77,9 @@ end
 
 # gem slim rails
 gem "slim-rails"
+
+#gem slim
+gem "slim"
 # gem font-awesome-rails
 gem 'font-awesome-rails'
 
