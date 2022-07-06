@@ -32,6 +32,7 @@ nav.bg-gray-300
           img.hidden.lg:block.h-8.w-auto[src="#{url_to_image("instagram_text.png")}" alt="Instagram"]
         .hidden.sm:block.sm:ml-6
           .flex.space-x-4
+            //Si el usuario ya esta autenticado mostrar el bóton de exit de lo contrario solo mostrara el resto
             -if signed_in?
               a.text-gray-900.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="/users/password/new"]
                 |  Exit
@@ -76,9 +77,4 @@ nav.bg-gray-300
         | Sign in
       a.hover:bg-gray-900.hover:text-white.block.px-3.py-2.rounded-md.text-sm.base.font-medium[href="/users/sign_up" aria-current="page"]
         | Sign up
-script
-  | src="app.js"
 = yield
-
-
-//stimulus o alfine, ver esto.
