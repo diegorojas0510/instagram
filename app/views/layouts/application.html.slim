@@ -34,16 +34,16 @@ nav.bg-gray-300
           .flex.space-x-4
             //Si el usuario ya esta autenticado mostrar el bóton de exit de lo contrario solo mostrara el resto
             -if signed_in?
-              a.text-gray-900.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="/users/password/new"]
-                |  Exit
+              .text-gray-900.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium
+                | <%= button_to "Exit", destroy_user_session_path, :method :delete %>
             -else
-              a.text-gray-900.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#"]
+              .text-gray-900.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium
                 | Home
-              a.text-gray-900.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="/users/sign_in"]
-                | Sign in
-              a.text-gray-900.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href= "/users/sign_up"]
-                | Sign up
-              a.text-gray-900.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="/users/password/new"]
+              .text-gray-900.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium
+                | <%= link_to "Sign in", new_user_session_path %>
+              .text-gray-900.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium
+                | <%= link_to "Sign up", new_user_registration_path
+              .text-gray-900.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="/users/password/new"]
                 |  Forgot your password?
       .absolute.inset-y-0.right-0.flex.items-center.pr-2.sm:static.sm:inset-auto.sm:ml-6.sm:pr-0
         button.bg-gray-800.p-1.rounded-full.text-gray-400.hover:text-white.focus:outline-none.focus:ring-2.focus:ring-offset-2.focus:ring-offset-gray-800.focus:ring-white[type="button"]
@@ -78,3 +78,6 @@ nav.bg-gray-300
       a.hover:bg-gray-900.hover:text-white.block.px-3.py-2.rounded-md.text-sm.base.font-medium[href="/users/sign_up" aria-current="page"]
         | Sign up
 = yield
+
+
+

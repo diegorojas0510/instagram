@@ -9,7 +9,7 @@
         |  start your 14-day free trial
   .mt-8.sm:mx-auto.sm:w-full.sm:max-w-md
     .bg-white.py-8.px-4.shadow.sm:rounded-lg.sm:px-10
-      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :pin }) do |f|
         = render "devise/shared/error_messages", resource: resource
         div
           = f.label :email, class: "block text-sm font-medium text-gray-700"

@@ -1,0 +1,10 @@
+<!--Mirar la vista con tailwind-->
+<% @pins.each do |pin| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <img src="<%= pin.image_url %>" alt="<% pin.tittle %>">
+      <h2><%= pin.tittle %></h2>
+      <p class="user"> Publicado por <%= pin.user.email %></p>
+    </div>
+  </div>
+<% end %>
