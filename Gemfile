@@ -64,7 +64,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem 'annotate' # Para generar mayor informaciión de los modelos
+  gem 'annotate', git: 'https://github.com/ctran/annotate_models.git' # Para generar mayor informaciión de los modelos
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
