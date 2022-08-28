@@ -30,6 +30,11 @@ gem "tailwindcss-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# gema para reemplazar los id por slug para no exponer infomación sencible
+gem 'friendly_id', '~> 5.4.0'
+
+# gema para la paginación
+gem 'will_paginate', '~> 3.3'
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
@@ -54,13 +59,12 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'rubocop'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem 'annotate', git: 'https://github.com/ctran/annotate_models.git'
+  gem 'annotate' # Para generar mayor informaciión de los modelos
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -77,10 +81,10 @@ group :test do
 end
 
 # gem slim rails
-gem "slim-rails"
+gem 'slim-rails'
 
 #gem slim
-gem "slim"
+#gem 'slim'
 # gem font-awesome-rails
 gem 'font-awesome-rails'
 
@@ -89,4 +93,3 @@ gem 'turbolinks', '~> 5.2.0'
 
 #gem devise
 gem 'devise'
-
