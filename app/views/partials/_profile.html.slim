@@ -1,4 +1,4 @@
-main.bg-gray-100.bg-opacity-25
+main.bg-gray-100.bg-opacity-10
     .lg:mx-auto.mb-8 class="lg:w-8/12"
       header.flex.flex-wrap.items-center.p-4.md:py-8
         .md:ml-16 class="md:w-3/12"
@@ -37,8 +37,9 @@ main.bg-gray-100.bg-opacity-25
         /! user following for mobile only
         ul.flex.md:hidden.justify-around.space-x-8.border-t.text-center.p-2.text-gray-600.leading-snug.text-sm
           li
-            span.font-semibold.text-gray-800.block 136
-            | publicaciones
+            = link_to contents_path
+              span.font-semibold.text-gray-800.block 136
+              | publicaciones
           li
             span.font-semibold.text-gray-800.block 40.5k
             | seguidores
@@ -49,7 +50,7 @@ main.bg-gray-100.bg-opacity-25
         ul.flex.items-center.justify-around.md:justify-center.space-x-12.uppercase.tracking-widest.font-semibold.text-xs.text-gray-600.border-t
           /! posts tab is active
           li.md:border-t.md:border-gray-700.md:-mt-px.md:text-gray-700
-            a.inline-block.p-3 href="#"
+            a.inline-block.p-3[href="#{contents_path}"]
               i.fas.fa-th-large.text-xl.md:text-xs
               span.hidden.md:inline PUBLICACIONES
           li
@@ -60,76 +61,3 @@ main.bg-gray-100.bg-opacity-25
             a.inline-block.p-3 href="#"
               i.far.fa-square.text-xl.md:text-xs
               span.hidden.md:inline ETIQUETADO
-        /! flexbox grid
-        .flex.flex-wrap.-mx-px.md:-mx-3
-          /! column
-          .p-px.md:px-3 class="w-1/3"
-            /! post 1
-            a href="#"
-              article.post.bg-gray-100.text-white.relative.pb-full.md:mb-6
-                /! post image
-                img.w-full.h-full.absolute.left-0.top-0.object-cover alt="image" src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" /
-                i.fas.fa-square.absolute.right-0.top-0.m-1
-                /! overlay
-                .overlay.bg-gray-800.bg-opacity-25.w-full.h-full.absolute.left-0.top-0.hidden
-                  .flex.justify-center.items-center.space-x-4.h-full
-                    span.p-2
-                      i.fas.fa-heart
-                      | 412K
-                    span.p-2
-                      i.fas.fa-comment
-                      | 2,909
-          .p-px.md:px-3 class="w-1/3"
-            a href="#"
-              /! post 2
-              article.post.bg-gray-100.text-white.relative.pb-full.md:mb-6
-                img.w-full.h-full.absolute.left-0.top-0.object-cover alt="image" src="https://images.unsplash.com/photo-1498409570040-05bf6d3dd5b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" /
-                /! overlay
-                .overlay.bg-gray-800.bg-opacity-25.w-full.h-full.absolute.left-0.top-0.hidden
-                  .flex.justify-center.items-center.space-x-4.h-full
-                    span.p-2
-                      i.fas.fa-heart
-                      | 412K
-                    span.p-2
-                      i.fas.fa-comment
-                      | 1,993
-          .p-px.md:px-3 class="w-1/3"
-            a href="#"
-              article.post.bg-gray-100.text-white.relative.pb-full.md:mb-6
-                img.w-full.h-full.absolute.left-0.top-0.object-cover alt="image" src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" /
-                /! overlay
-                .overlay.bg-gray-800.bg-opacity-25.w-full.h-full.absolute.left-0.top-0.hidden
-                  .flex.justify-center.items-center.space-x-4.h-full
-                    span.p-2
-                      i.fas.fa-heart
-                      | 112K
-                    span.p-2
-                      i.fas.fa-comment
-                      | 2,090
-          .p-px.md:px-3 class="w-1/3"
-            a href="#"
-              article.post.bg-gray-100.text-white.relative.pb-full.md:mb-6
-                img.w-full.h-full.absolute.left-0.top-0.object-cover alt="image" src="https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" /
-                i.fas.fa-video.absolute.right-0.top-0.m-1
-                /! overlay
-                .overlay.bg-gray-800.bg-opacity-25.w-full.h-full.absolute.left-0.top-0.hidden
-                  .flex.justify-center.items-center.space-x-4.h-full
-                    span.p-2
-                      i.fas.fa-heart
-                      | 841K
-                    span.p-2
-                      i.fas.fa-comment
-                      | 909
-          .p-px.md:px-3 class="w-1/3"
-            a href="#"
-              article.post.bg-gray-100.text-white.relative.pb-full.md:mb-6
-                img.w-full.h-full.absolute.left-0.top-0.object-cover alt="image" src="https://images.unsplash.com/photo-1475688621402-4257c812d6db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" /
-                /! overlay
-                .overlay.bg-gray-800.bg-opacity-25.w-full.h-full.absolute.left-0.top-0.hidden
-                  .flex.justify-center.items-center.space-x-4.h-full
-                    span.p-2
-                      i.fas.fa-heart
-                      | 120K
-                    span.p-2
-                      i.fas.fa-comment
-                      | 3,909

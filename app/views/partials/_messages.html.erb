@@ -1,0 +1,6 @@
+<section>
+  <!--Iteramos con el objeto message y su indice el cual le pasamos a la vista message-->
+  <% flash.each_with_index do |message, i|%>
+    <%= render partial:"partials/message", locals:{message:message[1], index:i}%>
+  <%end%>
+</section>

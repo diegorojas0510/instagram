@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_28_210706) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_02_214421) do
   create_table "contents", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.boolean "visible", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_contents_on_slug", unique: true
   end
 
   create_table "pins", force: :cascade do |t|

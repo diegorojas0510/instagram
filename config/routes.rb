@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  # ruta que vera el usuario cuando haga la petición controlador#metodo que responde a la accion "pins#index"
-  #root "pins#index"
+  devise_for :users
+  #resources :categories
+  resources :contents #do
+    #get 'search', on: :collection # Esta seria la ruta pots/search -> pots# search
+    # Nueva ruta para el controlador comments
+    #resources :comments, only: [:create] do
+    #resources :votes, only: [:create] # se utiliza la ruta anidada para el tema de los votos
+  #end
+  #resources :votes, only: [:create]
+  #end
+
   root "main#welcome"
   resources :pins
-  devise_for :users
-    # do
-    # get '/users/sign_out' => 'devise/sessions#destroy'
-    # end
 end

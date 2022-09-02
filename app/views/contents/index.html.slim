@@ -1,0 +1,13 @@
+/ h1 Contents#index
+/ p Find me in app/views/contents/index.html.slim
+section.relative
+  .container.px-4.mx-auto
+    .max-w-3xl.mb-20.mx-auto.text-center
+    .flex.flex-wrap.-m-3.mb-16
+      /por cada uno de los objetos se va a llamar al parcial contents
+      = render partial: 'content', collection:@contents
+    .text-center
+      /- if @pots.next_page.present?
+        = link_to  "Ver más pots", pots_path(page:@pots.next_page),  class:"mb-4 px-6 py-4 text-sm text-white font-semibold bg-red-400 hover:bg-red-300 rounded transition duration-200"
+        - # else
+        - #= link_to  "Atras", root_path,  class:"mb-4 px-6 py-4 text-sm text-white font-semibold bg-red-400 hover:bg-red-300 rounded transition duration-200"
