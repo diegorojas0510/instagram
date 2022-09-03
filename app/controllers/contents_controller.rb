@@ -39,10 +39,10 @@ class ContentsController < ApplicationController
     redirect_to contents_path status: :see_other, notice: "Acabas de eliminar una foto super!"
   end
 
-  # def search
-  #   @q = params[:q]
-  #   @contents = Content.where("name LIKE ?", "%#{@q}%").where(visible: true)
-  # end
+  def search
+    @q = params[:q]
+    @contents = Content.where("name LIKE ?", "%#{@q}%").where(visible: true)
+  end
 
 
   private
