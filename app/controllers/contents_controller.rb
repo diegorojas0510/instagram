@@ -2,7 +2,8 @@ class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contents = Content.where(visible: true).order('id DESC')
+    current_page = params[:page] ||= 1
+    @contents = Content.where(visible: true).order('id DESC').paginate(page: current_page, per_page: 10)
   end
 
   def new
@@ -54,7 +55,7 @@ class ContentsController < ApplicationController
 
 
   def content_params
-    params.require(:content).permit(:name, :description, :visible)
+    params.require(:content).permit(:name, :description, :visible, :image)
   end
 
 end

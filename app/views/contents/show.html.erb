@@ -1,8 +1,15 @@
 <section class="relative py-10 overflow-x-hidden">
   <div class="container  mx-auto">
     <div class="relative flex flex-wrap items-center -mx-4">
-      <div class="relative w-full lg:w-1/2 px-4 pb-12 lg:pb-0">
 
+      <!--Imagen-->
+      <div class="w-full lg:w-1/2 px-4">
+        <% if @content.image.present? %>
+          <%= image_tag @content.image, class: "w-full h-112 mx-auto mb-6 md:mb-0 rounded-xl object-cover" %>
+        <% end %>
+      </div>
+
+      <div class="relative w-full lg:w-1/2 px-4 pb-12 lg:pb-0">
         <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
           <%= @content.name %>
           <p class="text-sm tracking-tight text-gray-900">Posteado el: <%= date_format @content.created_at %></p>
@@ -29,15 +36,8 @@
             <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 Me Gusta</a>
           </div>
         </div>
-
-        <%= link_to 'Editar', edit_content_path(@content), class: "mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
-        <%= button_to 'Eliminar', content_path(@content), method: :delete, class: "mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
-
-      </div>
-      <div class="w-full lg:w-1/2 px-4">
-        <%# if @content.image.present? %>
-        <%#= image_tag @content.image, class: "w-full h-112 mx-auto mb-6 md:mb-0 rounded-xl object-cover" %>
-        <%# end %>
+        <%= link_to 'Editar', edit_content_path(@content), class: "mt-5 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+        <%= button_to 'Eliminar', content_path(@content), method: :delete, class: "mt-5 flex w-full items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-4 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
       </div>
     </div>
   </div>
@@ -55,13 +55,13 @@
 
 <section>
   <div class="mb-4 mt-4">
-    <%#= render partial: 'comments/form' %>
+    <%= render partial: 'comments/form' %>
   </div>
 </section>
 
 <section>
   <div class="mb-4 mt-4">
     <!--Mostrar los comentarios de una foto a travez del parcial -->
-    <%#= render partial: 'comments/comment', collection: @content.comments, as: :comment %>
+    <%= render partial: 'comments/comment', collection: @content.comments, as: :comment %>
   </div>
 </section>

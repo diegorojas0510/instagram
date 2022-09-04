@@ -2,9 +2,9 @@
   - if @content.errors.any?
     .mb-4
       - @content.errors.each do |error|
-        /= image_tag 'face-dizzy.svg', size: '20x20'
+        = image_tag 'face-dizzy.svg', size: '20x20'
         li
-         = error.full_message
+        = error.full_message
   .mb-4
     = form.text_field :name, placeholder: "Nombre del pots", class: "appearance-none block w-full py-3 px-4  text-gray-700 bg-gry-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
   .mb-4

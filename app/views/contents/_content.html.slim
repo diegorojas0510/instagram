@@ -5,7 +5,7 @@
         | Desarrollo de software
         - #= pot.categories.last
         /= content.category_default
-      /- if content.image.present?
+      - if content.image.present?
         = image_tag content.image, class:"w-full h-full object-cover rounded-lg"
     span.inline-block.mb-4.text-xs.text-gray-500
       = date_format content.created_at

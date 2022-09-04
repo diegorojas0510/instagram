@@ -8,5 +8,7 @@ class Content < ApplicationRecord
 
   validates :name, length: { maximum:200, minimum: 2, messages: "El nombre debe tener 2 caracteres"}
 
+  has_many :comments
 
+  has_one_attached :image, :dependent => :destroy
 end
