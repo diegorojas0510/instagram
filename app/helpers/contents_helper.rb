@@ -17,7 +17,7 @@ module ContentsHelper
   # metodo que recibe como arguento la descripción de la tarjeta
   def simple_description(description)
     # retorna los 100 primeros caracteres en la card para que no se dañe y lo puedo usar en todas las vistas
-    description.truncate(40)
+    description.truncate(30)
   end
 
 end
