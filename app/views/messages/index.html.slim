@@ -1,0 +1,37 @@
+section[aria-labelledby="notes-title"]
+  .bg-white.shadow.sm:overflow-hidden.sm:rounded-lg
+    .divide-y.divide-gray-200
+      .px-4.py-5.sm:px-6
+        h2#notes-title.text-lg.font-medium.text-gray-900
+          | Mensajes
+        .px-4.py-6.sm:px-6
+          ul.space-y-8[role="list"]
+            li
+              .flex.space-x-3
+                .flex-shrink-0
+                  #messages
+          - @messages.each do |message|
+            img.inline-block.h-10.w-10.rounded-full[src="#{url_to_image("photo_perfil")}" alt="profile"]
+            div
+              .text-sm
+                a.font-medium.text-gray-900
+                  | Diego Rojas
+                .mt-1.text-sm.text-gray-700
+                  .mb-4
+                  = render message
+                .mt-2.space-x-2.text-sm
+                  span.font-medium.text-gray-500
+                    | 4d ago
+                  span.font-medium.text-gray-500
+                    | ·
+                  button.font-medium.text-gray-900[type="button"]
+                    | Reply
+            /= render message
+            div.modal-actions.bg-gray-10.px-4.py-3.sm:px-6.sm:flex.sm:flex-row-reverse
+              .mb-4
+              => link_to "Mostrar Mensajes", message, class:"inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              '|
+              = link_to "Nuevo Mensaje", new_message_path, class:"inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            .mb-4
+
+s

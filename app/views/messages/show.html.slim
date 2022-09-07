@@ -1,0 +1,19 @@
+div
+  ul.divide-y.divide-gray-200[role="list"]
+    li.py-4
+      .flex.space-x-3
+        img.h-6.w-6.rounded-full[src="#{url_to_image("photo_perfil")}" alt="profile"]
+        .flex-1.space-y-1
+          .flex.items-center.justify-between
+            h3.text-sm.font-medium
+              | Diego Rojas
+            p.text-sm.text-gray-500
+              | 1horas
+          p.text-sm.text-gray-500
+            == render @message
+div.modal-actions.bg-gray-50.px-4.py-3.sm:px-6.sm:flex.sm:flex-row-reverse
+  => link_to "Editar Mensaje", edit_message_path(@message), class:"inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+  '|
+  =< link_to "Volver a Mensajes", messages_path, class:"inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+  '|
+  =< button_to "Eliminar Mensaje", @message, method: :delete, class:"inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"

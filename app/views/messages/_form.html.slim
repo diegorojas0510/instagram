@@ -1,0 +1,15 @@
+= form_with(model: @message) do |form|
+  - if @message.errors.any?
+    div style="color: red"
+      h2 = "#{pluralize(@message.errors.count, "error")} prohibited this message from being saved:"
+      ul
+        - @message.errors.each do |error|
+          li = error.full_message
+  div
+    .mb-2
+    = form.text_area :description, placeholder: "Descripción del pots", class: "appearance-none block w-full py-3 px-4  text-gray-700 bg-gry-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
+  div.sm:flex-row-reverse
+    .mb-2
+    = form.submit "Enviar", class:"inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+
+
