@@ -17,40 +17,21 @@
         <p class="mb-6 lg:mb-10 text-xl text-gray-500">
           <%= @content.description %>
         </p>
-        <div class="mb-10 border rounded-lg">
-          <%# @content.categories.each do |category| %>
-          <p class="font-semibold font-heading "><%#= category.name %></p>
-          <%# end %>
-        </div>
-
         <div class="mt-6">
-          <h3 class="sr-only">Me Gusta</h3>
           <div class="flex items-center">
             <div class="flex items-center">
-              <!--Heroicon name: mini/star-->
-              <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/>
-              </svg>
-
-            </div>
-            <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 Me Gusta</a>
-          </div>
+              <!--votos-->
+              <%= form_with model: [@content, Vote.new] do |form| %>
+                </div>
+                <%= form.submit "#{ @content.votes.count } 💛", class: "cursor-pointer block lg:inline-block px-5 py-3 text-sm text-center font-semibold text-red-500 hover:text-white hover:bg-red-500 border border-red-500 hover:border-red-600 rounded transition duration-200 animate-bounce"%>
+              <% end %>
+              </div>
         </div>
         <%= link_to 'Editar', edit_content_path(@content), class: "mt-5 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
         <%= button_to 'Eliminar', content_path(@content), method: :delete, class: "mt-5 flex w-full items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-4 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
       </div>
     </div>
   </div>
-</section>
-
-
-<section class="container mx-auto">
-<!--  <div class="mb-4">-->
-<%#= form_with model: [@content, Vote.new] do |form| %>
-<%#= form.submit "Votar 💛", class: "cursor-pointer block lg:inline-block px-5 py-3 text-sm text-center font-semibold text-red-500 hover:text-white hover:bg-red-500 border border-red-500 hover:border-red-600 rounded transition duration-200" %>
-<%# end %>
-<!--  </div>-->
-<!--  <small>Votos:   <%##= @content.votes.count %></small>-->
 </section>
 
 <section>

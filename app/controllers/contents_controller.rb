@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
 
   def index
     current_page = params[:page] ||= 1
-    @contents = Content.where(visible: true).order('id DESC').paginate(page: current_page, per_page: 10)
+    @contents = Content.populars.visible.paginate(page: current_page, per_page: 10)
   end
 
   def new
