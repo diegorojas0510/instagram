@@ -11,7 +11,7 @@ section[aria-labelledby="notes-title"]
                 .flex-shrink-0
                   #messages
           - @messages.each do |message|
-            img.inline-block.h-10.w-10.rounded-full[src="#{url_to_image("photo_perfil")}" alt="profile"]
+            img.inline-block.h-12.w-12.rounded-full[src="#{url_to_image("photo_perfil")}" alt="profile"]
             div
               .text-sm
                 a.font-medium.text-gray-900
@@ -33,5 +33,3 @@ section[aria-labelledby="notes-title"]
               '|
               = link_to "Nuevo Mensaje", new_message_path, class:"inline-flex items-center rounded border border-transparent bg-indigo-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             .mb-4
-
-s

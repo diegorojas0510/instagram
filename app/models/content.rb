@@ -17,6 +17,7 @@ class Content < ApplicationRecord
 
   scope :visible, -> {where( visible:true ) }
 
+  #belongs_to :user
 
   def self.populars
     joins("LEFT JOIN votes ON votes.votable_id = contents.id AND votes.votable_type = 'Content'")

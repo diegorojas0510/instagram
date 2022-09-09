@@ -6,7 +6,7 @@
     <div class="py-4 px-8 lg:px-4 mb-4 bg-gray-50 rounded-lg">
       <p class="text-base"><%= comment.opinion %></p>
       <%= form_with model: [@content, comment, Vote.new] do |form| %>
-        <%= form.submit "#{ comment.votes.count } 👍", class: "cursor-pointer block lg:inline-block px-5 py-3 text-sm text-center font-semibold text-red-500 hover:text-white hover:bg-blue-500 hover:border-blue-600 rounded transition duration-200 animate-bounce"%>
+        <%= form.submit "#{ comment.votes.count } 👍", class: "cursor-pointer block lg:inline-block px-0 py-1 text-sm text-center font-semibold text-red-500  rounded transition duration-200 animate-bounce"%>
       <% end %>
     </div>
   </div>
