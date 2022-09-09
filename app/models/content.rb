@@ -8,16 +8,16 @@ class Content < ApplicationRecord
 
   validates :name, length: { maximum:200, minimum: 2, messages: "El nombre debe tener 2 caracteres"}
 
-  has_many :votes, as: :votable
+  has_many :votes, as: :votable, :dependent => :destroy
 
-  has_many :comments, -> { order('id DESC') }
+  has_many :comments, -> { order('id DESC') }, :dependent => :destroy
 
   has_one_attached :image, :dependent => :destroy
 
 
   scope :visible, -> {where( visible:true ) }
 
-  #belongs_to :user
+  belongs_to :user
 
   def self.populars
     joins("LEFT JOIN votes ON votes.votable_id = contents.id AND votes.votable_type = 'Content'")

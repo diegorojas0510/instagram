@@ -7,7 +7,7 @@ class ContentsController < ApplicationController
   end
 
   def new
-    @content = Content.new
+    @content = current_user.contents.build
   end
 
   def show
@@ -27,7 +27,7 @@ class ContentsController < ApplicationController
   end
 
   def create
-    @content = Content.create content_params
+    @content = current_user.contents.create content_params
     if @content.persisted?
       redirect_to content_path(@content), notice: "Acabas de postear una nueva imagen"
     else
@@ -55,7 +55,7 @@ class ContentsController < ApplicationController
 
 
   def content_params
-    params.require(:content).permit(:name, :description, :visible, :image)
+    params.require(:content).permit(:name, :description, :visible, :image, :user_id)
   end
 
 end

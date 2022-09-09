@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_221913) do
   end
 
   create_table "contents", force: :cascade do |t|
+    t.integer "user_id", null: false
     t.string "name"
     t.string "description"
     t.boolean "visible", default: true
@@ -55,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_221913) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.index ["slug"], name: "index_contents_on_slug", unique: true
+    t.index ["user_id"], name: "index_contents_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -97,5 +99,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_221913) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "contents"
+  add_foreign_key "contents", "users"
   add_foreign_key "pins", "users"
 end
