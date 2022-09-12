@@ -96,3 +96,6 @@ gem 'devise'
 
 #Stimulus
 gem 'stimulus-rails'
+
+#gem gem "best_in_place", git: "https://github.com/mmotherwell/best_in_place"
+#gem 'best_in_place', '~> 3.0.1'

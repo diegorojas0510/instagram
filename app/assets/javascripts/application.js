@@ -8,6 +8,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+// require best_in_place.jquery-ui
 // require fontawesome/all
 //= require_tree .
 

@@ -6,5 +6,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :contents
+  has_one :profile, :dependent => :destroy
 
+  after_create :set_profile
+
+  def set_profile
+    self.profile = Profile.create()
+  end
 end

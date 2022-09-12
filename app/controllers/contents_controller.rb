@@ -10,9 +10,7 @@ class ContentsController < ApplicationController
     @content = current_user.contents.build
   end
 
-  def show
-    #@content = Content.find params[:id]
-  end
+  def show; end
 
   def update
     if @content.update content_params # esta definido en el private
@@ -22,9 +20,7 @@ class ContentsController < ApplicationController
     end
   end
 
-  def edit
-    #@content = Content.find params[:id]
-  end
+  def edit; end
 
   def create
     @content = current_user.contents.create content_params

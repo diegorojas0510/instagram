@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   root "main#welcome"
   resources :pins
+
+  resources :profiles, only: [:show, :edit, :update]
 end

@@ -8,7 +8,7 @@ main.bg-gray-100.bg-opacity-10
         .ml-4 class=("w-8/12 md:w-7/12")
           .md:flex.md:flex-wrap.md:items-center.mb-4
             h2.text-3xl.inline-block.font-light.md:mr-2.mb-2.sm:mb-0
-              | Diego Rojas
+              = @user.email
             /! badge
             span.inline-block.fas.fa-certificate.fa-lg.text-blue-500.relative.mr-6.text-xl.transform.-translate-y-2 aria-hidden="true"
               i.fas.fa-check.text-white.text-xs.absolute.inset-x-0.ml-1.mt-px
@@ -21,7 +21,7 @@ main.bg-gray-100.bg-opacity-10
           /! post, following, followers list for medium screens
           ul.hidden.md:flex.space-x-8.mb-4
             li
-              span.font-semibold 143
+              span.font-semibold = @user.contents.count
               |  publicaciones
             li
               span.font-semibold 40.5k
