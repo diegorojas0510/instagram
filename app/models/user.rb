@@ -11,6 +11,7 @@ class User < ApplicationRecord
   after_create :set_profile
 
   def set_profile
-    self.profile = Profile.create()
+    self.profile = Profile.create
   end
+
 end

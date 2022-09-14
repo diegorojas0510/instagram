@@ -1,33 +1,29 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile
+  before_action :set_profile, only: %i[ show edit update ]
 
-  def show
-  end
+  def show; end
 
   def edit; end
 
   def update
     respond_to do |format|
       if @profile.update(profile_params)
-      format.json { head :no_content }
-      format.js
+      format.html {redirect_to(@profile, :notice => 'El perfil se actualizo con exito')}
       else
-        format.json { render json: @profile.errors.full_messages, status: :unprocessable_entity }
-        format.js { render :edit }
+        format.html { render :action => "edit" , :status=> :unprocessable_entity}
       end
-
     end
   end
 
   private
 
   def set_profile
-    @profile = ( current_user.profile ||= Profile.create )
+    #@profile = ( current_user.profile ||= Profile.create )
+    @profile = Profile.find params[:id]
   end
 
-
   def profile_params
-    params.require(:profile).permit(:username,:phone, :photo, :first_name, :last_name, :bio, :user_id )
+    params.require(:profile).permit(:username,:email, :phone, :photo, :first_name, :last_name, :bio, :user_id )
   end
 
 
