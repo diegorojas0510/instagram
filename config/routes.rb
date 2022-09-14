@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :messages
   devise_for :users
-  #resources :categories
-  resources :profiles, only: [:show, :edit, :update]
 
   resources :contents do
     get 'search', on: :collection # Esta seria la ruta pots/search -> pots# search
@@ -15,5 +13,7 @@ Rails.application.routes.draw do
 
   root "main#welcome"
   resources :pins
+
+  resources :profiles, only: [:show, :edit, :update]
 
 end
