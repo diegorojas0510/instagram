@@ -17,7 +17,7 @@ class Content < ApplicationRecord
 
   scope :visible, -> {where( visible:true ) }
 
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   #belongs_to :profile
 
   def self.populars

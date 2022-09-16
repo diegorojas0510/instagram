@@ -80,13 +80,21 @@
                   <div class="mt-1 lg:hidden">
                     <div class="flex items-center">
                       <div class="inline-block h-12 w-12 flex-shrink-0 overflow-hidden rounded-full" aria-hidden="true">
-                        <img class="h-full w-full rounded-full" src="<%= url_to_image("photo_perfil.jpg") %>" alt="photo">
+                        <% if @profile.image.attached? %>
+                          <%= image_tag url_for(@profile.image), class: "h-full w-full rounded-full", alt: "photo" %>
+                        <%else %>
+                          <img class="h-full w-full rounded-full" src="<%= url_to_image("photo_perfil.jpg") %>" alt="photo">
+                        <% end %>
                       </div>
                     </div>
                   </div>
 
                   <div class="relative hidden overflow-hidden rounded-full lg:block">
-                    <img class="relative h-40 w-40 rounded-full" src="<%= url_to_image("photo_perfil.jpg") %>" alt="photo">
+                    <% if @profile.image.attached? %>
+                      <%= image_tag url_for(@profile.image), class: "relative h-40 w-40 rounded-full", alt: "photo" %>
+                    <%else %>
+                      <img class="relative h-40 w-40 rounded-full" src="<%= url_to_image("photo_perfil.jpg") %>" alt="photo">
+                    <% end %>
                     <label for="desktop-user-photo" class="absolute inset-0 flex h-full w-full items-center justify-center bg-black bg-opacity-75 text-sm font-medium text-white opacity-0 focus-within:opacity-100">
                       <input type="file" id="desktop-user-photo" name="user-photo" class="absolute inset-0 h-full w-full cursor-pointer rounded-md border-gray-300 opacity-0" disabled>
                     </label>
