@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :contents
   has_one :profile, :dependent => :destroy
 
+  belongs_to :message
+
   after_create :set_profile
 
   def set_profile

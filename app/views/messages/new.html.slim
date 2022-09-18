@@ -6,7 +6,7 @@
       .bg-gray-50.px-4.py-6.sm:px-6
         .flex.space-x-3
           .flex-shrink-0
-            img.h-10.w-10.rounded-full[src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt=""]
+            img.h-10.w-10.rounded-full[src="#{url_for(current_user.profile.image)}" alt="profile"]
           .min-w-0.flex-1
             = render "form", message: @message
               .mt-3.flex.items-center.justify-end
