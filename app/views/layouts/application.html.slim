@@ -18,7 +18,7 @@ html
     /   = alert
 -if signed_in?
   = render partial: 'partials/navbar', locals: {profile:current_user.profile}
-  /= render partial: 'partials/messages'
+  /= render partial: 'partials/messages', locals: {profile:current_user.messages}
     // variable local para usar en el partials que se llama profile
   = render partial: 'profiles/profile', locals: {profile:current_user.profile}
 .container.px-4.mx-auto

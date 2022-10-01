@@ -1,5 +1,5 @@
 nav.bg-gray-100
-    .max-w-7xl.mx-auto.px-2.sm:px-6.lg:px-8
+    .max-w-5xl.mx-auto.px-2.sm:px-6.lg:px-8
       .relative.flex.items-center.justify-between.h-16
         .absolute.inset-y-0.left-0.flex.items-center.sm:hidden
           button.inline-flex.items-center.justify-center.p-2.rounded-md.text-gray-400.hover:text-white.hover:bg-gray-700.focus:outline-none.focus:ring-2.focus:ring-inset.focus:ring-white[type="button" aria-controls="mobile-menu" aria-expanded="false"]
@@ -15,10 +15,10 @@ nav.bg-gray-100
               img.block.lg:hidden.h-8.w-auto[href="#{root_path}" src="#{url_to_image("insta.png")}" alt="Instagram"]
             =link_to root_path
               img.hidden.lg:block.h-8.w-auto[href="#{root_path}" src="#{url_to_image("instagram_text.png")}" alt="Instagram"]
-          .hidden.sm:block.sm:ml-6
-            .flex.space-x-4.flex-row-reverse
+          .hidden.sm:block.sm:ml-36
+            .flex.space-x-0.flex-row-reverse
                 //Exit
-                a.text-gray-900.hover:bg-red-100.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium.sm:ml-6[href="#{destroy_user_session_path}"]
+                a.text-gray-900.hover:bg-red-100.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#{destroy_user_session_path}"]
                   svg._ab6[aria-label="Destroy" color="#ff0000" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
                     path[d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"]
                     line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="9" y1="9" x2="15" y2="15"]
@@ -30,7 +30,7 @@ nav.bg-gray-100
                     line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12.003" x2="12.003" y1="6.545" y2="17.455"]
                     line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="6.545" x2="17.455" y1="12.001" y2="12.001"]
                   //Mesenger//
-                a.text-gray-900.hover:bg-gray-200.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#{messages_path}"]
+                a.text-gray-900.hover:bg-gray-200.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#{new_message_path}"]
                   svg._ab6-[aria-label="Messenger" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
                     path[d="M12.003 2.001a9.705 9.705 0 110 19.4 10.876 10.876 0 01-2.895-.384.798.798 0 00-.533.04l-1.984.876a.801.801 0 01-1.123-.708l-.054-1.78a.806.806 0 00-.27-.569 9.49 9.49 0 01-3.14-7.175 9.65 9.65 0 0110-9.7z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.739"]
                     path[d="M17.79 10.132a.659.659 0 00-.962-.873l-2.556 2.05a.63.63 0 01-.758.002L11.06 9.47a1.576 1.576 0 00-2.277.42l-2.567 3.98a.659.659 0 00.961.875l2.556-2.049a.63.63 0 01.759-.002l2.452 1.84a1.576 1.576 0 002.278-.42z" fill-rule="evenodd"]
@@ -58,19 +58,14 @@ nav.bg-gray-100
                       = form_tag search_contents_path, method: :get do
                         = text_field_tag :q, params[:q],id:"search",placeholder:"Buscar", type: "search", class:"block w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:border-indigo-500 focus:text-gray-900 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
 
-        .absolute.inset-y-0.right-0.flex.items-center.pr-2.sm:static.sm:inset-auto.sm:ml-6.sm:pr-0
-          button.bg-gray-800.p-1.rounded-full.text-gray-400.hover:text-white.focus:outline-none.focus:ring-2.focus:ring-offset-2.focus:ring-offset-gray-800.focus:ring-white[type="button"]
-            span.sr-only
-              /| View notifications
-            svg.h-7.w-7[xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"]
-              path[stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"]
-          .ml-3.relative
-            div
-              button#user-menu-button.bg-gray-800.flex.text-sm.rounded-full.focus:outline-none.focus:ring-2.focus:ring-offset-2.focus:ring-offset-gray-800.focus:ring-white[type="button" aria-expanded="false" aria-haspopup="true"]
-                span.inline-block.relative = link_to "#{profile_path(current_user.profile)}"
-                  - if profile.image.attached?
-                    img.h-10.w-10.rounded-full src="#{url_for (profile.image)}" alt="image_profile"
-                  - else
-                    img.h-10.w-10.rounded-full[src="#{url_to_image("avatar.png")}" alt="image_profile"]
-                  span.absolute.top-0.right-0.block.h-3.w-3.rounded-full.ring-2.ring-white.bg-green-600
+          .absolute.inset-y-0.right-0.flex.items-center.pr-2.sm:static.sm:inset-auto.sm:ml-2.sm:pr-0
+            .ml-3.relative
+              div
+                button#user-menu-button.bg-gray-800.flex.text-sm.rounded-full.focus:outline-none.focus:ring-2.focus:ring-offset-2.focus:ring-offset-gray-800.focus:ring-white[type="button" aria-expanded="false" aria-haspopup="true"]
+                  span.inline-block.relative = link_to "#{profile_path(current_user.profile)}"
+                    - if profile.image.attached?
+                      img.h-8.w-8.rounded-full src="#{url_for (profile.image)}" alt="image_profile"
+                    - else
+                      img.h-8.w-8.rounded-full[src="#{url_to_image("avatar.png")}" alt="image_profile"]
+                    span.absolute.top-0.right-0.block.h-3.w-3.rounded-full.ring-2.ring-white.bg-green-600
 

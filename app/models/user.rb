@@ -7,13 +7,14 @@ class User < ApplicationRecord
 
   has_many :contents
   has_one :profile, :dependent => :destroy
+  has_one :message, :dependent => :destroy
 
-  belongs_to :message
+  has_many :message
 
   after_create :set_profile
 
   def set_profile
-    self.profile = Profile.create
+   self.profile = Profile.create
   end
 
 end
