@@ -7,11 +7,19 @@
         <div class="border-t border-sky-800 pt-4 pb-3">
           <div class="flex items-center px-4">
             <div class="flex-shrink-0">
-              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=320&h=320&q=80" alt="">
+              <%= form_with model: @profile do |f| %>
+              <% if @profile.image.attached? %>
+                <%= image_tag url_for(@profile.image), class: "h-10 w-10 rounded-full", alt: "photo" %>
+              <%else %>
+                <img class="h-10 w-10 rounded-full" src="<%= url_to_image("avatar.png") %>" alt="photo">
+              <% end %>
+              <%= f.label :image, class: "absolute inset-0 flex h-full w-full items-center justify-center bg-black bg-opacity-75 text-sm font-medium text-white opacity-0 focus-within:opacity-100 hover:opacity-100" %>
+              <%= f.file_field :image, type: "file", id: "desktop-user-photo", class: "absolute inset-0 h-full w-full cursor-pointer rounded-md border-gray-300 opacity-0" %>
+                <% end %>
             </div>
 
             <div class="ml-3">
-              <div class="text-base font-medium text-white">Debbie Lewis</div>
+              <div class="text-base font-medium text-white"><%=@profile.first_name %></div>
               <div class="text-sm font-medium text-sky-200"><%= @profile.user.email %></div>
             </div>
           </div>
@@ -35,7 +43,7 @@
     </div>
     <header class="relative py-10">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold tracking-tight text-white"> ¿ <%= @profile.first_name %> vas a editar tu perfil?</h1>
+        <h1 class="text-3xl font-bold tracking-tight text-white"> ¿ <%= @profile.first_name %> are you going to edit your profile?</h1>
       </div>
     </header>
   </div>
@@ -52,7 +60,7 @@
             <!-- Profile section -->
             <div class="py-6 px-4 sm:p-6 lg:pb-8">
               <div>
-                <h2 class="text-lg font-medium leading-6 text-gray-900">Perfil</h2>
+                <h2 class="text-lg font-medium leading-6 text-gray-900">Profile</h2>
                 <p class="mt-1 text-sm text-gray-500">This information will be displayed publicly so be careful what you
                   share.</p>
               </div>
@@ -74,13 +82,12 @@
                       <div class="mt-1">
                         <%= f.text_area :bio, type: "text", id: "bio", placeholder: " Biografia", rows: "3", class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-500 focus:ring-sky-500 sm:text-sm" %>
                       </div>
-                      <p class="mt-2 text-sm text-gray-500">Breve descripción de tu perfil. Las URL tienen
-                        hipervínculos.</p>
+                      <p class="mt-2 text-sm text-gray-500">Brief description of your profile. URLs have hyperlinks.</p>
                     </div>
                   </div>
 
                   <div class="mt-6 flex-grow lg:mt-0 lg:ml-6 lg:flex-shrink-0 lg:flex-grow-0">
-                    <p class="text-sm font-medium text-gray-700" aria-hidden="true">Imagen</p>
+                    <p class="text-sm font-medium text-gray-700" aria-hidden="true">Image</p>
                     <div class="mt-1 lg:hidden">
                       <div class="flex items-center">
                         <div class="inline-block h-12 w-12 flex-shrink-0 overflow-hidden rounded-full" aria-hidden="true">

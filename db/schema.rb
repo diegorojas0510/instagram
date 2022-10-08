@@ -67,15 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_11_220415) do
     t.index ["slug"], name: "index_messages_on_slug", unique: true
   end
 
-  create_table "pins", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "tittle"
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_pins_on_user_id"
-  end
-
   create_table "profiles", force: :cascade do |t|
     t.string "username"
     t.string "email"
@@ -114,6 +105,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_11_220415) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "contents"
   add_foreign_key "contents", "users"
-  add_foreign_key "pins", "users"
   add_foreign_key "profiles", "users"
 end

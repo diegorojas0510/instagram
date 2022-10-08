@@ -7,11 +7,15 @@
         <div class="border-t border-sky-800 pt-4 pb-3">
           <div class="flex items-center px-4">
             <div class="flex-shrink-0">
-              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=320&h=320&q=80" alt="">
+              <% if @profile.image.attached? %>
+                <%= image_tag url_for(@profile.image), class:"h-10 w-10 rounded-full", alt: "photo" %>
+              <%else %>
+                <img class="h-10 w-10 rounded-full" src="<%= url_to_image("avatar.png") %>" alt="photo">
+              <% end %>
             </div>
             <div class="ml-3">
-              <div class="text-base font-medium text-white">Debbie Lewis</div>
-              <div class="text-sm font-medium text-sky-200">debbielewis@example.com</div>
+              <div class="text-base font-medium text-white"><%= @profile.first_name %></div>
+              <div class="text-sm font-medium text-sky-200"><%= @profile.email %></div>
             </div>
           </div>
         </div>
@@ -34,7 +38,7 @@
     </div>
     <header class="relative py-10">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold tracking-tight text-white">Perfil de <%= @profile.first_name %></h1>
+        <h1 class="text-3xl font-bold tracking-tight text-white">Profile by: <%= @profile.first_name %></h1>
       </div>
     </header>
   </div>
@@ -51,7 +55,7 @@
             <!-- Profile section -->
             <div class="py-6 px-4 sm:p-6 lg:pb-8">
               <div>
-                <h2 class="text-lg font-medium leading-6 text-gray-900">Perfil</h2>
+                <h2 class="text-lg font-medium leading-6 text-gray-900">Profile</h2>
                 <p class="mt-1 text-sm text-gray-500">This information will be displayed publicly so be careful what you share.</p>
               </div>
 

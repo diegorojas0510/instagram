@@ -12,7 +12,7 @@
       <div class="relative w-full lg:w-1/2 px-4 pb-12 lg:pb-0">
         <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
           <%= @content.name %>
-          <p class="text-sm tracking-tight text-gray-900">Posteado el: <%= date_format @content.created_at %></p>
+          <p class="text-sm tracking-tight text-gray-900">Posted on: <%= date_format @content.created_at %></p>
         </h2>
         <p class="mb-6 lg:mb-10 text-xl text-gray-500">
           <%= @content.description %>
@@ -27,8 +27,8 @@
               <% end %>
               </div>
         </div>
-        <%= link_to 'Editar', edit_content_path(@content), class: "mt-5 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
-        <%= button_to 'Eliminar', content_path(@content), method: :delete, data: {confirm: "¿Estas seguro?" }, class: "mt-5 flex w-full items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-4 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+        <%= link_to 'Edit', edit_content_path(@content), class: "mt-5 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+        <%= button_to 'Delete', content_path(@content), method: :delete, class: "mt-5 flex w-full items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-4 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
       </div>
     </div>
   </div>
