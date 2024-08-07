@@ -1,8 +1,8 @@
 .w-full.md:w-1/2.lg:w-1/3.p-3
-  .p-6.border.rounded-xl
-    .relative.h-52.mb-6
+  .p-1.border.rounded-xl
+    .relative.h-60.mb-4
       - if content.image.present?
-        = image_tag content.image, class:"w-full h-full object-cover rounded-lg hover:bg-red-700"
+        = image_tag content.image, class:"w-full h-full object-cover rounded-lg hover:bg-red-700 red"
     span.inline-block.mb-4.text-xs.text-gray-500
       = date_format content.created_at
     h2.mb-4.text-2xl.font-semibold.font-heading
