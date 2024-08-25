@@ -1,4 +1,4 @@
-nav.bg-gray-100.h-full.flex.flex-col.fixed.top-0.left-0.w-60.px-4
+nav.bg-gray-100.h-full.flex.flex-col.fixed.top-0.left-0.w-60.px-4.hidden.lg:flex
   .flex-1.flex.flex-col.items-start.space-y-4.mt-6
     = link_to root_path, class: "flex items-center space-x-2"
       img.h-8.w-auto[src="#{url_to_image('insta.png')}" alt="Instagram"]
@@ -75,3 +75,8 @@ nav.bg-gray-100.h-full.flex.flex-col.fixed.top-0.left-0.w-60.px-4
           img.h-8.w-8.rounded-full[src="#{url_to_image('avatar.png')}" alt="Profile Image"]
         span.absolute.top-0.right-0.block.h-3.w-3.rounded-full.ring-2.ring-white.bg-green-600
       span Perfil
+
+// Menú hamburguesa visible solo en pantallas pequeñas
+button.lg:hidden.fixed.top-4.left-4.bg-gray-200.p-2.rounded-md
+  svg.h-6.w-6.text-gray-700[xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"]
+    path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"]
