@@ -1,71 +1,77 @@
-nav.bg-gray-100
-    .max-w-5xl.mx-auto.px-2.sm:px-6.lg:px-8
-      .relative.flex.items-center.justify-between.h-16
-        .absolute.inset-y-0.left-0.flex.items-center.sm:hidden
-          button.inline-flex.items-center.justify-center.p-2.rounded-md.text-gray-400.hover:text-white.hover:bg-gray-700.focus:outline-none.focus:ring-2.focus:ring-inset.focus:ring-white[type="button" aria-controls="mobile-menu" aria-expanded="false"]
-            span.sr-only
-              | Open main menu
-            svg.block.h-6.w-6[xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"]
-              path[stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"]
-            svg.hidden.h-6.w-6[xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"]
-              path[stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"]
-        .flex-1.flex.items-center.justify-center.sm:items-stretch.sm:justify-center
-          .flex-shrink-0.flex.items-center
-            =link_to root_path
-              img.block.lg:hidden.h-8.w-auto[href="#{root_path}" src="#{url_to_image("insta.png")}" alt="Instagram"]
-            =link_to root_path
-              img.hidden.lg:block.h-8.w-auto[href="#{root_path}" src="#{url_to_image("instagram_text.png")}" alt="Instagram"]
-          .hidden.sm:block.sm:ml-36
-            .flex.space-x-0.flex-row-reverse
-                //Exit
-                a.text-gray-900.hover:bg-red-100.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#{destroy_user_session_path}"]
-                  svg._ab6[aria-label="Destroy" color="#ff0000" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
-                    path[d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"]
-                    line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="9" y1="9" x2="15" y2="15"]
-                    line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="15" y1="9" x2="9" y2="15"]
-                  //Nuevo Post//
-                a.text-gray-900.hover:bg-gray-200.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#{new_content_path}"]
-                  svg._ab6-[aria-label="Nueva publicación" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
-                    path[d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"]
-                    line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12.003" x2="12.003" y1="6.545" y2="17.455"]
-                    line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="6.545" x2="17.455" y1="12.001" y2="12.001"]
-                  //Mesenger//
-                a.text-gray-900.hover:bg-gray-200.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#{new_message_path}"]
-                  svg._ab6-[aria-label="Messenger" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
-                    path[d="M12.003 2.001a9.705 9.705 0 110 19.4 10.876 10.876 0 01-2.895-.384.798.798 0 00-.533.04l-1.984.876a.801.801 0 01-1.123-.708l-.054-1.78a.806.806 0 00-.27-.569 9.49 9.49 0 01-3.14-7.175 9.65 9.65 0 0110-9.7z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.739"]
-                    path[d="M17.79 10.132a.659.659 0 00-.962-.873l-2.556 2.05a.63.63 0 01-.758.002L11.06 9.47a1.576 1.576 0 00-2.277.42l-2.567 3.98a.659.659 0 00.961.875l2.556-2.049a.63.63 0 01.759-.002l2.452 1.84a1.576 1.576 0 002.278-.42z" fill-rule="evenodd"]
-                  //Profile//
-                a.text-gray-900.hover:bg-gray-200.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#{profile_path(current_user.profile)}"]
-                  svg._ab6-[aria-label="Buscar personas" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
-                    polygon[fill="none" points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"]
-                    polygon[fill-rule="evenodd" points="10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056"]
-                    circle[cx="12.001" cy="12.005" fill="none" r="10.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"]
-                  //Like//
-                a.text-gray-900.hover:bg-gray-200.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#{root_path}"]
-                  svg._ab6-[aria-label="Like" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
-                    path[d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"]
-                  //Inicio//
-                a.text-gray-900.hover:bg-gray-200.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#{contents_path}"]
-                  svg._ab6-[aria-label="Inicio" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
-                    path[d="M9.005 16.545a2.997 2.997 0 012.997-2.997h0A2.997 2.997 0 0115 16.545V22h7V11.543L12 2 2 11.543V22h7.005z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"]
-                  //Search//
-                .flex-2.px-8.flex.justify-center.lg:ml-6.lg:justify-end
-                  .max-w-lg.w-full.lg:max-w-xs
-                    .relative.text-gray-400.focus-within:text-gray-400
-                      .pointer-events-none.absolute.inset-y-0.left-0.pl-3.flex.items-center
-                        svg.h-5.w-5.text-gray-400 aria-hidden="true" fill="currentColor" viewbox=("0 0 20 20") xmlns="http://www.w3.org/2000/svg"
-                          path clip-rule="evenodd" d=("M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z") fill-rule="evenodd"
-                      = form_tag search_contents_path, method: :get do
-                        = text_field_tag :q, params[:q],id:"search",placeholder:"Buscar", type: "search", class:"block w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:border-indigo-500 focus:text-gray-900 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+nav.bg-gray-100.h-full.flex.flex-col.fixed.top-0.left-0.w-60.px-4
+  .flex-1.flex.flex-col.items-start.space-y-4.mt-6
+    = link_to root_path, class: "flex items-center space-x-2"
+      img.h-8.w-auto[src="#{url_to_image('insta.png')}" alt="Instagram"]
+      img.h-8.w-auto.hidden.lg:block[src="#{url_to_image('instagram_text.png')}" alt="Instagram"]
 
-          .absolute.inset-y-0.right-0.flex.items-center.pr-2.sm:static.sm:inset-auto.sm:ml-2.sm:pr-0
-            .ml-3.relative
-              div
-                button#user-menu-button.bg-gray-800.flex.text-sm.rounded-full.focus:outline-none.focus:ring-2.focus:ring-offset-2.focus:ring-offset-gray-800.focus:ring-white[type="button" aria-expanded="false" aria-haspopup="true"]
-                  span.inline-block.relative = link_to "#{profile_path(current_user.profile)}"
-                    - if profile.image.attached?
-                      img.h-8.w-8.rounded-full src="#{url_for (profile.image)}" alt="image_profile"
-                    - else
-                      img.h-8.w-8.rounded-full[src="#{url_to_image("avatar.png")}" alt="image_profile"]
-                    span.absolute.top-0.right-0.block.h-3.w-3.rounded-full.ring-2.ring-white.bg-green-600
+    //Inicio//
+    = link_to contents_path, class: "flex items-center space-x-2 text-gray-900 hover:bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      svg._ab6-[aria-label="Inicio" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
+        path[d="M9.005 16.545a2.997 2.997 0 012.997-2.997h0A2.997 2.997 0 0115 16.545V22h7V11.543L12 2 2 11.543V22h7.005z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"]
+      span Inicio
 
+    //Buscar//
+    .relative.text-gray-400.focus-within:text-gray-400
+      .pointer-events-none.absolute.inset-y-0.left-0.pl-3.flex.items-center
+        svg.h-5.w-5.text-gray-400 aria-hidden="true" fill="currentColor" viewbox=("0 0 20 20") xmlns="http://www.w3.org/2000/svg"
+          path clip-rule="evenodd" d=("M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z") fill-rule="evenodd"
+      = form_tag search_contents_path, method: :get do
+        = text_field_tag :q, params[:q], id: "search", placeholder: "Buscar", type: "search", class: "block w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:border-indigo-500 focus:text-gray-900 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+
+    //Like//
+    = link_to root_path, class: "flex items-center space-x-2 text-gray-900 hover:bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      svg._ab6-[aria-label="Like" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
+        path[d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"]
+      span Like
+
+    //Nuevo Post//
+    = link_to new_content_path, class: "flex items-center space-x-2 text-gray-900 hover:bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      svg._ab6-[aria-label="Crear" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
+        path[d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"]
+        line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12.003" x2="12.003" y1="6.545" y2="17.455"]
+        line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="6.545" x2="17.455" y1="12.001" y2="12.001"]
+      span Crear
+
+    //Messenger//
+    = link_to new_message_path, class: "flex items-center space-x-2 text-gray-900 hover:bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      svg._ab6-[aria-label="Messenger" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
+        path[d="M12.003 2.001a9.705 9.705 0 110 19.4 10.876 10.876 0 01-2.895-.384.798.798 0 00-.533.04l-1.984.876a.801.801 0 01-1.123-.708l-.054-1.78a.806.806 0 00-.27-.569 9.49 9.49 0 01-3.14-7.175 9.65 9.65 0 0110-9.7z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.739"]
+        path[d="M17.79 10.132a.659.659 0 00-.962-.873l-2.556 2.05a.63.63 0 01-.758.002L11.06 9.47a1.576 1.576 0 00-2.277.42l-2.567 3.98a.659.659 0 00.961.875l2.556-2.049a.63.63 0 01.759-.002l2.452 1.84a1.576 1.576 0 002.278-.42z" fill-rule="evenodd"]
+      span Mensajes
+
+    //Explorar TODO hacer que se muestren varios videos//
+    = link_to contents_path, class: "flex items-center space-x-2 text-gray-900 hover:bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      svg.x1lliihq.x1n2onr6.x5n08af[aria-label="Reels" fill="currentColor" height="24" role="img" viewbox="0 0 24 24" width="24"]
+        title Reels
+        line[fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" x1="2.049" x2="21.95" y1="7.002" y2="7.002"]
+        line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="13.504" x2="16.362" y1="2.001" y2="7.002"]
+        line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="7.207" x2="10.002" y1="2.11" y2="7.002"]
+        path[d="M2 12.001v3.449c0 2.849.698 4.006 1.606 4.945.94.908 2.098 1.607 4.946 1.607h6.896c2.848 0 4.006-.699 4.946-1.607.908-.939 1.606-2.096 1.606-4.945V8.552c0-2.848-.698-4.006-1.606-4.945C19.454 2.699 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.546 2 5.704 2 8.552Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"]
+        path[d="M9.763 17.664a.908.908 0 0 1-.454-.787V11.63a.909.909 0 0 1 1.364-.788l4.545 2.624a.909.909 0 0 1 0 1.575l-4.545 2.624a.91.91 0 0 1-.91 0Z" fill-rule="evenodd"]
+      span Explorar
+
+    //Editar Perfil//
+    = link_to edit_profile_path(current_user.profile), class: "flex items-center space-x-2 text-gray-900 hover:bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      svg._ab6-[aria-label="Configuración" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
+        polygon[fill="none" points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"]
+        polygon[fill-rule="evenodd" points="10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056"]
+        circle[cx="12.001" cy="12.005" fill="none" r="10.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"]
+      span Editar Perfil
+
+    //Cerrar Sesión//
+    = link_to destroy_user_session_path, method: :delete, class: "flex items-center space-x-2 text-gray-900 hover:bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      svg._ab6[aria-label="Destroy" color="#ff0000" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
+        path[d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"]
+        line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="9" y1="9" x2="15" y2="15"]
+        line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="15" y1="9" x2="9" y2="15"]
+      span Salir
+
+    //Perfil//
+    = link_to profile_path(current_user.profile), class: "flex items-center space-x-2 text-gray-900 hover:bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      .relative
+        - if current_user.profile.image.attached?
+          img.h-8.w-8.rounded-full src="#{url_for(current_user.profile.image)}" alt="Profile Image"
+        - else
+          img.h-8.w-8.rounded-full[src="#{url_to_image('avatar.png')}" alt="Profile Image"]
+        span.absolute.top-0.right-0.block.h-3.w-3.rounded-full.ring-2.ring-white.bg-green-600
+      span Perfil
