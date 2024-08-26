@@ -1,4 +1,4 @@
-nav.bg-gray-100.h-full.flex.flex-col.fixed.top-0.left-0.w-60.px-4.hidden.lg:flex
+nav.h-full.flex.flex-col.fixed.top-0.left-0.w-60.px-4.hidden.lg:flex
   .flex-1.flex.flex-col.items-start.space-y-4.mt-6
     = link_to root_path, class: "flex items-center space-x-2"
       img.h-8.w-auto[src="#{url_to_image('insta.png')}" alt="Instagram"]
@@ -48,7 +48,7 @@ nav.bg-gray-100.h-full.flex.flex-col.fixed.top-0.left-0.w-60.px-4.hidden.lg:flex
         line[fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="7.207" x2="10.002" y1="2.11" y2="7.002"]
         path[d="M2 12.001v3.449c0 2.849.698 4.006 1.606 4.945.94.908 2.098 1.607 4.946 1.607h6.896c2.848 0 4.006-.699 4.946-1.607.908-.939 1.606-2.096 1.606-4.945V8.552c0-2.848-.698-4.006-1.606-4.945C19.454 2.699 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.546 2 5.704 2 8.552Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"]
         path[d="M9.763 17.664a.908.908 0 0 1-.454-.787V11.63a.909.909 0 0 1 1.364-.788l4.545 2.624a.909.909 0 0 1 0 1.575l-4.545 2.624a.91.91 0 0 1-.91 0Z" fill-rule="evenodd"]
-      span Explorar
+      span Reels
 
     //Editar Perfil//
     = link_to edit_profile_path(current_user.profile), class: "flex items-center space-x-2 text-gray-900 hover:bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
