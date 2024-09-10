@@ -1,5 +1,5 @@
 doctype html
-html
+html.dark[lang="en"]
   head
     title
       | Instagram
@@ -10,7 +10,7 @@ html
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
     script[src="<your-kit-code>" data-mutate-approach="sync"]
-  body
+  body.bg-white.dark:bg-gray-900.text-black.dark:text-white
     = render partial: 'partials/messages'
 -if signed_in?
   = render partial: 'partials/navbar', locals: {profile:current_user.profile}
@@ -20,12 +20,47 @@ html
   = yield
 javascript:
     // Se añade iteración para capturar todos los mensajes y creamos el evento de escucha clic para cerrar el mensaje
-    const buttons = document.querySelectorAll('.message-close');
-    buttons.forEach(function(button) {
-    button.addEventListener('click', function() {
-        //console.log('clik')
-        const message = document.getElementById('message-' + button.value);
-        // por cada mensaje cambiamos el estilo
-        message.style.display = 'none';
+    document.addEventListener('DOMContentLoaded', function () {
+        // Capturamos todos los botones de cierre de mensaje
+        const buttons = document.querySelectorAll('.message-close');
+
+        buttons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                const message = document.getElementById('message-' + button.value);
+                message.style.display = 'none'; // Ocultar el mensaje al hacer clic en el botón
+            });
         });
+
+        // Capturamos todos los mensajes flash y los cerramos después de un tiempo
+        const messages = document.querySelectorAll('.messages');
+
+        messages.forEach(function (message) {
+            setTimeout(function () {
+                message.style.opacity = '0'; // Añadimos un efecto de desvanecimiento
+                setTimeout(function () {
+                    message.style.display = 'none'; // Finalmente ocultamos el mensaje
+                }, 500); // Esperamos medio segundo para que la animación termine
+            }, 5000); // Tiempo de espera antes de que el mensaje desaparezca (5 segundos)
+        });
+    });
+
+    // usamos el modo dark sobre un bóton para cambiar de modo claro y oscuro
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleDarkMode = document.querySelector('#toggle-dark-mode');
+
+        toggleDarkMode.addEventListener('click', function () {
+            document.documentElement.classList.toggle('dark');
+
+            // Guardar la preferencia del usuario en localStorage
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Establecer el tema al cargar la página según la preferencia guardada
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light');
+        }
     });
