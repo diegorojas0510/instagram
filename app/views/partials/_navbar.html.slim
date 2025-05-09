@@ -19,7 +19,7 @@ nav.h-full.flex.flex-col.fixed.top-0.left-0.w-60.px-4.hidden.lg:flex
         = text_field_tag :q, params[:q], id: "search", placeholder: "Buscar", type: "search", class: "block w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:border-indigo-500 focus:text-gray-900 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
 
     //Like//
-    = link_to root_path, class: "flex items-center space-x-2 text-gray-900 hover:bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+    = link_to "http://www.google.com/", class: "flex items-center space-x-2 text-gray-900 hover:bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium", target: '_blank'
       svg._ab6-[aria-label="Like" color="#262626" fill="#262626" height="24" role="img" viewbox="0 0 24 24" width="24"]
         path[d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"]
       span Like
@@ -76,8 +76,11 @@ nav.h-full.flex.flex-col.fixed.top-0.left-0.w-60.px-4.hidden.lg:flex
         span.absolute.top-0.right-0.block.h-3.w-3.rounded-full.ring-2.ring-white.bg-green-600
       span Perfil
 
-    button#toggle-dark-mode.p-2.bg-gray-200.dark:bg-gray-800.text-black.dark:text-white.rounded
-      |  Cambiar Modo oscuro
+    button#toggle-dark-mode.flex.items-center.space-x-2.text-gray-900.hover:bg-gray-200.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium
+      svg[aria-label="Dark Mode" fill="currentColor" height="24" role="img" viewbox="0 0 24 24" width="24"]
+        path[d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 17c-1.61 0-3.06-.61-4.22-1.6.23-2.11 4.22-2.11 4.22-2.11s3.99 0 4.22 2.11C15.06 18.39 13.61 19 12 19zM8 10c0-.83.67-1.5 1.5-1.5S11 9.17 11 10s-.67 1.5-1.5 1.5S8 10.83 8 10zm4.5-1.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5S11 10.83 11 10s.67-1.5 1.5-1.5zM12 22c-2.76 0-5-2.24-5-5h10c0 2.76-2.24 5-5 5z"]
+      span
+        | Modo dark
 
 // Menú hamburguesa visible solo en pantallas pequeñas
 button.lg:hidden.fixed.top-4.left-4.bg-gray-200.p-2.rounded-md

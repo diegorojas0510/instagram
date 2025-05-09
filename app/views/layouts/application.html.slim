@@ -1,5 +1,5 @@
 doctype html
-html.dark[lang="en"]
+html.light[lang="en"]
   head
     title
       | Instagram
@@ -52,13 +52,12 @@ javascript:
             document.documentElement.classList.toggle('dark');
 
             // Guardar la preferencia del usuario en localStorage
-            if (document.documentElement.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
+            if (document.documentElement.classList.contains('light')) {
                 localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
             }
         });
-
         // Establecer el tema al cargar la página según la preferencia guardada
         if (localStorage.getItem('theme') === 'light') {
             document.documentElement.classList.add('light');
